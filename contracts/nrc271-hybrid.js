@@ -70,14 +70,14 @@ class nrc271 extends Ownable {
     // ******
     
     _mintEvent (status, _token) {
-        Event.Trigger(this.name(), {
+        Event.Trigger('mintEvent', {
             Status: status,
             Mint: _token
         });
     }
 
     _transferEvent (status, _from, _to, _id) {
-        Event.Trigger(this.name(), {
+        Event.Trigger('transferEvent', {
             Status: status,
             Transfer: {
                 from: _from,
@@ -88,7 +88,7 @@ class nrc271 extends Ownable {
     }
 
     _approveEvent (status, _owner, _spender, _id) {
-        Event.Trigger(this.name(), {
+        Event.Trigger('approveEvent', {
             Status: status,
             Approve: {
                 owner: _owner,
